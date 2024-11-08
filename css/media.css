@@ -1,0 +1,381 @@
+/* ---- Media Queries ---- */
+
+/* >80rem XL */
+@media screen and (min-width: calc(80rem + 0.1px)) {
+	section>div {
+		padding-inline: 2rem;
+	}
+
+	footer {
+		padding-inline: 2rem;
+	}
+
+}
+
+/* >80rem XL Ende */
+
+/* max 80rem LG */
+@media screen and (max-width:80rem) {
+	section>div {
+		padding-inline: 2rem;
+	}
+
+	footer {
+		padding-inline: 2rem;
+	}
+
+	section#galerie div.grid {
+		padding-inline: 2rem;
+	}
+
+}
+
+/* max 80rem LG Ende */
+
+/* max 64rem MD */
+@media screen and (max-width:64rem) {
+
+	/* Header */
+	nav {
+		display: none;
+	}
+
+	header div {
+		display: flex;
+	}
+
+	#menu-btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	header.small .menu-visible {
+		top: 5rem;
+	}
+	.menu-visible {
+		display: block;
+		position: absolute;
+		z-index: 999;
+		left: 0;
+		top: 8rem;
+		width: 100%;
+		background-color: var(--col-bg);
+		transition: top ease-in-out 600ms;
+	}
+	.menu-hidden {
+		display: block;
+		position: absolute;
+		z-index: 0;
+		left: 0;
+		top: -15rem;
+		width: 100%;
+		background-color: var(--col-bg);
+		box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+		transition: top ease-in-out 600ms;
+	}
+
+	nav {
+		left: 0;
+	}
+
+	nav a {
+		display: block;
+	}
+
+	nav a:active {
+		color: var(--col-hvr);
+	}
+
+	nav ul {
+		display: block;
+		text-align: center;
+	}
+
+	nav li {
+		padding-block: 0.25rem;
+		border-bottom: 0.5px solid var(--col-main);
+	}
+
+	nav li:first-of-type {
+		border-top: 0.5px solid var(--col-main);
+	}
+
+
+	main section:first-of-type {
+		text-align: center;
+	}
+	.hero-buttons {
+		justify-content: center;
+	}
+	
+
+
+	#menu-btn:active svg {
+		stroke: var(--col-main);
+	}
+
+	#menu-btn:active {
+		border: 1px solid var(--col-main);
+	}
+
+	.phone-btn:active {
+		border: 1px solid var(--col-main);
+	}
+
+	main section:first-of-type h1 {
+		font-size: 2.75rem;
+	}
+
+	.phone-btn:active svg {
+		fill: var(--col-main);
+	}
+
+	#impressum {
+		text-align: start;
+	}
+
+	#impressum h1,
+	#datenschutz h1 {
+		font-size: 2rem;
+		margin-block: 0;
+	}
+
+	nav ul a::before {
+		display: none;
+	}
+
+	#seite-nicht-gefunden {
+		text-align: start;
+	}
+
+	.header-cta {
+		position: absolute;
+		right: 11rem;
+	}
+	
+	
+	.section-sub-heading {
+		font-size: 1.75rem;
+	}
+	#galerie p {
+		font-size: 1.75rem;
+	}
+	.btn-primary {
+		font-size: 1rem;
+		padding: 0.5rem 1rem;
+	}
+	#footer .grid > * {
+		justify-self: center;
+	}
+	#reservationForm {
+		grid-template-rows: repeat(4 auto);
+		grid-template-areas: 
+			"inputs inputs inputs inputs inputs inputs inputs inputs inputs inputs inputs inputs"
+			"calendar calendar calendar calendar calendar calendar timeslots timeslots timeslots timeslots timeslots timeslots"
+			"services services services services services services services services services services services services"
+			"submit submit submit submit submit submit submit submit submit submit submit submit";
+	}
+	#book-call-to-action {
+		background-size: cover;
+	}
+	#haircuts .img-container div:nth-of-type(2) img {
+		transform: translateY(10%);
+	}
+	#haircuts .img-container div:nth-of-type(1) img {
+		transform: translateY(-10%);
+	}
+	#haircuts .img-container {
+		transform: scale(0.85);
+	}
+	#beards {
+		padding-top: 5rem;
+	}
+	#beards .img-container {
+		transform: translateX(-10%) translateY(10%) scale(0.75);
+	}
+	
+	#beards img:nth-of-type(1) {
+		transform: translateY(-20%);
+	}
+	
+	#beards img:nth-of-type(2) {
+		position: absolute;
+		z-index: 10;
+		transform: translateY(-60%) translateX(30%);
+	}
+}
+
+/* max 64rem MD Ende */
+
+/* max 48rem SM */
+@media screen and (max-width:48rem) {
+	body {
+		text-wrap: initial;
+	}
+
+	h2 {
+		font-size: 2rem;
+	}
+
+
+	#content>p {
+		text-wrap: wrap;
+	}
+
+	main section:first-of-type p {
+		font-size: 1.1rem;
+		margin-block: 3rem;
+
+	}
+	
+
+
+	footer {
+		flex-wrap: wrap;
+	}
+
+	footer> :first-child {
+		order: 1;
+	}
+
+	footer> :nth-child(2) {
+		order: 0;
+		width: 100%;
+		justify-content: center;
+	}
+
+	footer> :last-child {
+		order: 2;
+	}
+
+	.cookie-banner {
+		width: 95%;
+	}
+
+	section#location > .grid div {
+		display: flex;
+		justify-content: start;
+		gap: 2rem;
+		align-items: center;
+		flex-direction: column;
+	}
+	#reservationForm {
+		grid-template-rows: repeat(5 auto);
+		grid-template-areas: 
+			"inputs inputs inputs inputs inputs inputs inputs inputs inputs inputs inputs inputs"
+			"calendar calendar calendar calendar calendar calendar calendar calendar calendar calendar calendar calendar"
+			"timeslots timeslots timeslots timeslots timeslots timeslots timeslots timeslots timeslots timeslots timeslots timeslots"
+			"services services services services services services services services services services services services"
+			"submit submit submit submit submit submit submit submit submit submit submit submit";
+	}
+	#haircuts .img-container div:nth-of-type(2) {
+		transform: none;
+		display: none;
+	}
+	#haircuts .img-container div:nth-of-type(1) img {
+		transform: none;
+		max-width: 100%;
+	}
+	#beards img:nth-of-type(1) {
+		transform: none;
+		width: 100%;
+	}
+	#beards .img-container:nth-of-type(1) {
+		transform: none;
+		justify-self: stretch;
+		width: 100%;
+	}
+	#beards img:nth-of-type(2) {
+		display: none;
+	}
+	#beards .img-container {
+		transform: none;
+	}
+	#haircuts .img-container {
+		transform: none;
+	}
+}
+
+/* max 48rem SM Ende*/
+
+/* max 36rem XS */
+@media screen and (max-width:36rem) {
+	.header-cta {
+		display: none;
+	}
+	#content div {
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	section#kontakt div.grid iframe {
+		max-width: 100%;
+		justify-self: start;
+	}
+
+	main section:first-of-type h1 {
+		font-size: 2rem;
+	}
+
+	footer> :nth-child(2) {
+		justify-content: start;
+	}
+
+	.testimonial-author {
+		flex-direction: column;
+	}
+
+	.testimonial-source {
+		text-align: center;
+	}
+	footer p span:last-of-type {
+		display: inline;
+	}
+	#services .duration {
+		display: block;
+	}
+
+	
+}
+
+/* Mobile max 36rem XS Ende */
+
+/* max 25rem XXS */
+@media screen and (max-width:25rem) {
+	header {
+		padding-inline: 2rem;
+	}
+	h2 {
+		font-size: 1.75rem;
+	}
+	section>div {
+		padding-inline: 2.5rem;
+	}
+	#preise li {
+		font-size: 0.9rem;
+	}
+	.price {
+		font-size: 0.9rem;
+	}
+
+	a.logo {
+		max-width: 7rem;
+	}
+	.section-sub-heading {
+		font-size: 1.25rem;
+	}
+	#galerie p {
+		font-size: 1.3rem;
+	}
+	.profile-picture {
+		position: absolute;
+		top: 2rem;
+		right: 1rem;
+		width: 3.5rem;
+	}
+	
+}
+
+/* max 25rem XXS Ende */
+
+/* ---- Media Queries Ende ---- */

@@ -1,0 +1,21 @@
+:root {
+  /* ---- Farben ---- */
+
+  --col-font: #fffbf2;
+  --col-font-inverted: #181818;
+  --col-main: #e5d5b3;
+  --col-bg-light: #f5f5f5;
+  --col-bg: #123840;
+  --col-bg-alt: #1a2322;
+  --col-hvr: #d1b280;
+
+  /* ---- ENDE Farben ---- */
+
+
+  /* ---- Schriften ---- */
+  --font-std: 'Roboto', Arial, sans-serif;
+  --font-alt: 'Libre Baskerville', Arial, sans-serif;
+  --font-headlines: 'Montserrat', 'Times New Roman', sans-serif;
+
+  /* ---- ENDE Schriften ---- */
+}

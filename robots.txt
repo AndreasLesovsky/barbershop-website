@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /private
+Allow: /
+
+Sitemap: https://barbershop.andreas-lesovsky-web-projekte.at/sitemap.xml
