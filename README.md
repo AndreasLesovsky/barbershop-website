@@ -10,7 +10,8 @@ Eine Website für einen Barbershop, erstellt mit HTML, CSS, JavaScript und PHP.
 
 ## Installation
 1. Repository klonen: `git clone https://github.com/username/barbershop-website.git`
-2. `index.php` im Browser öffnen.
+2. Die Datebank db_friseur muss erstellt werden.
+3. `index.php` im Browser öffnen.
 
 ## Lizenz
 Dieses Projekt steht unter der MIT-Lizenz.
