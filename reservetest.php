@@ -12,7 +12,7 @@ $msgCon = '';
 $conn = dbConnect();
 
 if (isset($_POST['reservationFormSubmitted'])) {
-    // $secretKey = "6Lf0rm4qAAAAAMFjZzaJ91736aotC4ydgsZrv3hL";
+    // $secretKey = "";
     // $responseKey = $_POST['g-recaptcha-response'];
     // $userIP = $_SERVER['REMOTE_ADDR'];
     // $url = "https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$responseKey&remoteip=$userIP";
@@ -54,7 +54,7 @@ if (isset($_POST['reservationFormSubmitted'])) {
                     $mail->Port = 587;
                     $mail->CharSet = 'UTF-8';
 
-                    $mail->setFrom('barbershop@andreas-lesovsky-web.dev', 'Barbershop KLM');
+                    $mail->setFrom('', 'Barbershop KLM');
                     $mail->addAddress($email, $name);
 
                     $mail->isHTML(true);
@@ -85,7 +85,7 @@ $conn->close();
 
 // Prüfen, ob das Kontaktformular abgesendet wurde
 if (isset($_POST['contactFormSubmitted'])) {
-    $secretKey = "6Lf0rm4qAAAAAMFjZzaJ91736aotC4ydgsZrv3hL";
+    $secretKey = "";
     $responseKey = $_POST['g-recaptcha-response'];
     $userIP = $_SERVER['REMOTE_ADDR'];
     $url = "https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$responseKey&remoteip=$userIP";
@@ -238,7 +238,7 @@ if (isset($_POST['contactFormSubmitted'])) {
 
                 <!-- <div class="g-recaptcha-container col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="g-recaptcha"
-                        data-sitekey="6Lf0rm4qAAAAAII2mqKznWe97fKzzbaA8Q3_aC9M"></div> -->
+                        data-sitekey=""></div> -->
         </div>
         <input type="hidden" name="reservationFormSubmitted" value="1">
         <button type="submit" class="btn-primary hvr-bounce-to-bottom col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -399,7 +399,7 @@ if (isset($_POST['contactFormSubmitted'])) {
                 },
             ],
             onChange: function(selectedDates, dateStr) {
-                loadTimeSlots(dateStr); // Neue Fetch-Anfrage bei Datumsauswahl
+                loadTimeSlots(dateStr);
             },
         });
 
@@ -424,7 +424,7 @@ if (isset($_POST['contactFormSubmitted'])) {
             .getElementById("reservationForm")
             .addEventListener("submit", function(event) {
                 const selectedService = document.getElementById("selectedService").value;
-                const timeInput = document.getElementById("time").value; // Zeitfeld abrufen
+                const timeInput = document.getElementById("time").value;
                 const resMessageDiv = document.getElementById(
                     "reservation-message-container"
                 );
@@ -447,9 +447,9 @@ if (isset($_POST['contactFormSubmitted'])) {
                 }
 
                 if (errorMessage) {
-                    event.preventDefault(); // Verhindert das Absenden des Formulars
-                    resMessageDiv.textContent = errorMessage.trim(); // Fehlernachricht setzen
-                    resMessageDiv.style.display = "block"; // Fehlernachricht anzeigen
+                    event.preventDefault();
+                    resMessageDiv.textContent = errorMessage.trim();
+                    resMessageDiv.style.display = "block";
                     resMessageDiv.scrollIntoView({
                         behavior: "smooth",
                         block: "center"
