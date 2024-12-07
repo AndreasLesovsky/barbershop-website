@@ -7,6 +7,8 @@ $conn = dbConnect();
 
 if (isset($_GET['date'])) {
     header('Content-Type: application/json');
+    header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
+    header('Pragma: no-cache');
 
     $date = $_GET['date'];
 
@@ -19,53 +21,24 @@ if (isset($_GET['date'])) {
     ];
 
     // Vorbereitete Anweisung verwenden, um die gebuchten Slots zu erhalten
-    $stmt = $conn->prepare("SELECT time, service_id FROM tbl_reservierungen WHERE date = ?");
+    $stmt = $conn->prepare("SELECT time FROM tbl_reservierungen WHERE date = ?");
     $stmt->bind_param("s", $date);
     $stmt->execute();
     $result = $stmt->get_result();
 
+    // Gebuchte Slots in einem Array speichern
     $booked_slots = [];
     while ($row = $result->fetch_assoc()) {
-        $booked_slots[] = $row;
+        $booked_slots[$row['time']] = true; // Zeit als Schlüssel speichern
     }
 
     $response = ['timeslots' => []];
 
-    // Array zur Verfolgung der gebuchten Slots
-    $bookedTimes = [];
-    foreach ($booked_slots as $booked) {
-        $bookedTimes[$booked['time']] = $booked['service_id'];
-    }
-
-    foreach ($timeslots as $index => $slot) {
-        $isBooked = isset($bookedTimes[$slot]);
-        
-        // Prüfe, ob es sich um eine Reservierung mit `service_id = 4` handelt
-        if ($isBooked && $bookedTimes[$slot] == 4) {
-            // Setze den aktuellen Slot als gebucht
-            $response['timeslots'][] = [
-                'time' => $slot,
-                'booked' => true
-            ];
-
-            // Der nächste Slot, wenn er existiert
-            if (isset($timeslots[$index + 1])) {
-                $nextSlot = $timeslots[$index + 1];
-                // Setze den nächsten Slot ebenfalls als gebucht
-                $response['timeslots'][] = [
-                    'time' => $nextSlot,
-                    'booked' => true
-                ];
-            }
-
-            // Überspringe den nächsten Slot im Loop, da er bereits hinzugefügt wurde
-            continue;
-        }
-
-        // Füge den Status des aktuellen Slots hinzu, wenn kein Überspringen stattfindet
+    // Überprüfen, ob die Slots verfügbar oder gebucht sind
+    foreach ($timeslots as $slot) {
         $response['timeslots'][] = [
             'time' => $slot,
-            'booked' => $isBooked
+            'booked' => isset($booked_slots[$slot]) // Überprüfung der Schlüssel
         ];
     }
 

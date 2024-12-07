@@ -167,14 +167,6 @@
 	#footer .grid > * {
 		justify-self: center;
 	}
-	#reservationForm {
-		grid-template-rows: repeat(4 auto);
-		grid-template-areas: 
-			"inputs inputs inputs inputs inputs inputs inputs inputs inputs inputs inputs inputs"
-			"calendar calendar calendar calendar calendar calendar timeslots timeslots timeslots timeslots timeslots timeslots"
-			"services services services services services services services services services services services services"
-			"submit submit submit submit submit submit submit submit submit submit submit submit";
-	}
 	#book-call-to-action {
 		background-size: cover;
 	}
@@ -258,15 +250,6 @@
 		gap: 2rem;
 		align-items: center;
 		flex-direction: column;
-	}
-	#reservationForm {
-		grid-template-rows: repeat(5 auto);
-		grid-template-areas: 
-			"inputs inputs inputs inputs inputs inputs inputs inputs inputs inputs inputs inputs"
-			"calendar calendar calendar calendar calendar calendar calendar calendar calendar calendar calendar calendar"
-			"timeslots timeslots timeslots timeslots timeslots timeslots timeslots timeslots timeslots timeslots timeslots timeslots"
-			"services services services services services services services services services services services services"
-			"submit submit submit submit submit submit submit submit submit submit submit submit";
 	}
 	#haircuts .img-container div:nth-of-type(2) {
 		transform: none;

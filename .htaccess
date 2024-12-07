@@ -1,0 +1,4 @@
+DirectoryIndex index.php
+
+# Benutzerdefinierte 404-Fehlerseite
+ErrorDocument 404 /seite-nicht-gefunden.html

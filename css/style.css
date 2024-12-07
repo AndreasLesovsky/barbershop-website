@@ -559,12 +559,19 @@ section#preise .grid li.active {
 }
 
 #reservationForm {
+	max-width: 30rem;
 	padding-inline: 0;
-	grid-template-rows: repeat(3 auto);
+	grid-template-rows: repeat(6, auto);
 	grid-template-areas:
-		"inputs inputs inputs inputs inputs inputs calendar calendar calendar calendar calendar calendar"
-		"services services services services services services timeslots timeslots timeslots timeslots timeslots timeslots"
+		"inputs inputs inputs inputs inputs inputs inputs inputs inputs inputs inputs inputs"
+		"calendar calendar calendar calendar calendar calendar calendar calendar calendar calendar calendar calendar"
+		"timeslots timeslots timeslots timeslots timeslots timeslots timeslots timeslots timeslots timeslots timeslots timeslots"
+		"services services services services services services services services services services services services"
+		"g-recaptcha g-recaptcha g-recaptcha g-recaptcha g-recaptcha g-recaptcha g-recaptcha g-recaptcha g-recaptcha g-recaptcha g-recaptcha g-recaptcha"
 		"submit submit submit submit submit submit submit submit submit submit submit submit";
+}
+#reservationForm .g-recaptcha-container {
+	grid-area: g-recaptcha;
 }
 
 #reservationForm>div.grid:nth-of-type(1) {
@@ -575,7 +582,7 @@ section#preise .grid li.active {
 	grid-area: calendar;
 }
 
-#reservationForm>div.grid:nth-of-type(3) {
+#timeSlots {
 	grid-area: timeslots;
 }
 
@@ -594,6 +601,7 @@ section#preise .grid li.active {
 }
 
 #timeSlots {
+	justify-self: stretch;
 	display: grid;
 	grid-template-columns: repeat(3, auto);
 	grid-template-rows: repeat(6, auto);

@@ -397,9 +397,9 @@ if (isset($_POST['contactFormSubmitted'])) {
 
 				<form id="reservationForm" class="grid col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" method="POST">
 
-					<div class="grid col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+					<div class="grid col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						<label for="name" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">Name:</label>
-						<input type="text" id="name" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" placeholder="Max Mustemann" name="name" required>
+						<input type="text" id="name" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" placeholder="Max Mustermann" name="name" required>
 
 						<label for="email" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">E-Mail:</label>
 						<input type="email" id="email" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" placeholder="max.mustermann@muster.at" name="email" required>
@@ -408,16 +408,16 @@ if (isset($_POST['contactFormSubmitted'])) {
 						<input type="tel" id="phone" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" placeholder="+43 699 ... ... .." name="phone" required>
 					</div>
 
-					<div class="grid col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<div class="grid col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						<label for="date" hidden>Datum:</label>
 						<input type="text" id="datepicker" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" name="date" required readonly hidden>
 						<label for="time" hidden>Uhrzeit:</label>
 						<input type="time" id="time" name="time" hidden>
 					</div>
 
-					<div id="timeSlots" class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12"></div>
+					<div id="timeSlots" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-					<div class="grid col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+					<div class="grid col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						<label for="selectedService" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">Dienstleistung:</label>
 						<div id="services" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 							<button type="button" data-service="Haarschnitt">
@@ -604,7 +604,7 @@ if (isset($_POST['contactFormSubmitted'])) {
 						Name
 					</label>
 
-					<input type="text" id="name" name="Name" placeholder="Max Mustemann"
+					<input type="text" id="name" name="Name" placeholder="Max Mustermann"
 						class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
 					<label for="email" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -617,13 +617,18 @@ if (isset($_POST['contactFormSubmitted'])) {
 					<label for="nachricht" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						Nachricht
 					</label>
+
 					<textarea id="nachricht" name="Nachricht" placeholder="Hallo Barbershop KLM Team! ..."
 						class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" required></textarea>
+
 					<div class="g-recaptcha-container col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						<div class="g-recaptcha"
-							data-sitekey="6Lf0rm4qAAAAAII2mqKznWe97fKzzbaA8Q3_aC9M" data-theme="dark"></div>
+							data-sitekey="6Lf0rm4qAAAAAII2mqKznWe97fKzzbaA8Q3_aC9M" data-theme="dark">
+						</div>
 					</div>
+
 					<input type="hidden" name="contactFormSubmitted" value="1">
+
 					<button type="submit" id="submit"
 						class="btn-primary hvr-bounce-to-bottom col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
