@@ -13,7 +13,7 @@ $conn = dbConnect();
 
 // Prüfen, ob das Reservierungsformular abgesendet wurde
 if (isset($_POST['reservationFormSubmitted'])) {
-	$secretKey = "6Lf0rm4qAAAAAMFjZzaJ91736aotC4ydgsZrv3hL";
+	$secretKey = "";
 	$responseKey = $_POST['g-recaptcha-response'];
 	$userIP = $_SERVER['REMOTE_ADDR'];
 	$url = "https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$responseKey&remoteip=$userIP";
@@ -39,16 +39,16 @@ if (isset($_POST['reservationFormSubmitted'])) {
 			try {
 				// Servereinstellungen
 				$mail->isSMTP(); // Verwende SMTP
-				$mail->Host = 'webmail.your-server.de'; // Setze den SMTP-Server
+				$mail->Host = ''; // Setze den SMTP-Server
 				$mail->SMTPAuth = true; // Aktiviere SMTP-Authentifizierung
-				$mail->Username = 'barbershop@andreas-lesovsky-web.dev'; // SMTP-Benutzername
-				$mail->Password = '94MS85g6h19727uN'; // SMTP-Passwort
+				$mail->Username = ''; // SMTP-Benutzername
+				$mail->Password = ''; // SMTP-Passwort
 				$mail->SMTPSecure = 'tls'; // Aktiviere TLS-Verschlüsselung
 				$mail->Port = 587; // TCP-Port
 				$mail->CharSet = 'UTF-8';
 
 				// Empfänger
-				$mail->setFrom('barbershop@andreas-lesovsky-web.dev', 'Barbershop KLM'); // Absender
+				$mail->setFrom('', 'Barbershop KLM'); // Absender
 				$mail->addAddress($email, $name); // Empfänger
 
 				// Inhalt der E-Mail
@@ -75,7 +75,7 @@ $conn->close();
 
 // Prüfen, ob das Kontaktformular abgesendet wurde
 if (isset($_POST['contactFormSubmitted'])) {
-	$secretKey = "6Lf0rm4qAAAAAMFjZzaJ91736aotC4ydgsZrv3hL";
+	$secretKey = "";
 	$responseKey = $_POST['g-recaptcha-response'];
 	$userIP = $_SERVER['REMOTE_ADDR'];
 	$url = "https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$responseKey&remoteip=$userIP";
@@ -94,18 +94,18 @@ if (isset($_POST['contactFormSubmitted'])) {
 		try {
 			// SMTP-Server-Setup
 			$mail->isSMTP();
-			$mail->Host       = 'webmail.your-server.de';
+			$mail->Host       = '';
 			$mail->SMTPAuth   = true;
-			$mail->Username   = 'barbershop@andreas-lesovsky-web.dev';
-			$mail->Password   = '94MS85g6h19727uN';
+			$mail->Username   = '';
+			$mail->Password   = '';
 			$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 			$mail->Port       = 587; // Port für TLS
 
 			// Absender
-			$mail->setFrom('barbershop@andreas-lesovsky-web.dev', 'Barbershop');
+			$mail->setFrom('', 'Barbershop');
 
 			// Empfänger (die E-Mail wird an dich gesendet)
-			$mail->addAddress('kontakt@andreas-lesovsky-web.dev', 'Your Name');
+			$mail->addAddress('', 'Your Name');
 
 			// E-Mail-Inhalt
 			$mail->isHTML(true);
@@ -439,7 +439,7 @@ if (isset($_POST['contactFormSubmitted'])) {
 
 					<div class="g-recaptcha-container col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						<div class="g-recaptcha"
-							data-sitekey="6Lf0rm4qAAAAAII2mqKznWe97fKzzbaA8Q3_aC9M"></div>
+							data-sitekey=""></div>
 					</div>
 					<input type="hidden" name="reservationFormSubmitted" value="1">
 					<button type="submit" class="btn-primary hvr-bounce-to-bottom col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -623,7 +623,7 @@ if (isset($_POST['contactFormSubmitted'])) {
 
 					<div class="g-recaptcha-container col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						<div class="g-recaptcha"
-							data-sitekey="6Lf0rm4qAAAAAII2mqKznWe97fKzzbaA8Q3_aC9M" data-theme="dark">
+							data-sitekey="" data-theme="dark">
 						</div>
 					</div>
 
